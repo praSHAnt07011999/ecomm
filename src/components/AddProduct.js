@@ -10,6 +10,7 @@ const AddProduct = () => {
     const [ description, setDescription ] = useState('');
     const [ price, setPrice ] = useState('');
     const [ rating, setRating ] = useState('');
+    const [ selectedFile, setSelectedFile ] = useState('');
 
     const dispatch = useDispatch();
 
@@ -19,15 +20,16 @@ const AddProduct = () => {
         }
         else {
             event.preventDefault();
-
             const productId = uuidv4();
             const newProduct = {
                 id:productId,
                 title:title,
                 description:description,
                 price:price,
-                rating:rating
-            };        
+                rating:rating,
+                image: selectedFile,
+                addedToCart: false
+            };
             dispatch(addProduct(newProduct));
             setTitle('');
             setDescription('');
@@ -70,6 +72,13 @@ const AddProduct = () => {
                 name="rating"
                 value={rating}
                 onChange={(event) => setRating(event.target.value)}
+            />
+            </label>
+             <label className="image-label">Image:
+                <input
+                type="file"
+                name="img"
+                onChange={(event) => setSelectedFile(URL.createObjectURL(event.target.files[0]))}
             />
             </label>
                 <input type="submit" className="submit-button" />

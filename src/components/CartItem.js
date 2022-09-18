@@ -1,5 +1,4 @@
 import './CartItem.css'
-import bicycle from '../resources/images/bicycle.jpg';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from '../redux/reducers/addToCartSlice';
 import { subtractFromTotal } from '../redux/reducers/cartTotalSlice';
@@ -16,7 +15,7 @@ const CartItem = (props) => {
     return (
         <div className="cart-item-container">
             <div className='image-container'>
-                <img src={bicycle} alt='product' className='product-image'/>
+                <img src={props.image} alt='product' className='product-image'/>
             </div>
             <div className='cart-item-details'>
                 <h3 className='item-title'>{props.title}</h3>

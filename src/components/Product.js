@@ -1,4 +1,3 @@
-import bicycle from '../resources/images/bicycle.jpg';
 import "./Product.css";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/reducers/addToCartSlice';
@@ -16,7 +15,7 @@ const Product = (props) => {
     return (
         <div className='container'>
             <div className='image-container'>
-                <img className='picture' src={bicycle} alt='bicycle' />
+                <img className='picture' src={props.image} alt='bicycle' />
             </div>
             <h3 className='title'>{props.title}</h3>
             <p className='description'>{props.description}</p>

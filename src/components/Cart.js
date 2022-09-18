@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
 import './Cart.css';
 import CartItem from './CartItem';
 
@@ -14,7 +13,7 @@ const Cart = () => {
             <div className='item_container'>
                 {
                     cartItems.map(item => (
-                        <CartItem key={item.id} id={item.id} title={item.title} description={item.description} price={item.price} rating={item.rating}/>
+                        <CartItem key={item.id} id={item.id} title={item.title} description={item.description} price={item.price} rating={item.rating} image={item.image}/>
                     ))
                 }
                 <div className='total-amount'>Total amount: {JSON.stringify(total)}</div>
