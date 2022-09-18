@@ -1,0 +1,12 @@
+.cart_container{
+    border: 1px solid black;
+}
+
+.heading {
+    display: block;
+    width: 100%
+}
+
+.item_container {
+    display: block;
+}
