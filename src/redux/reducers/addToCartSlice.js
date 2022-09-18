@@ -7,11 +7,11 @@ export const addToCartSlice = createSlice({
         addToCart: (state,action) => {
             state.push(action.payload);
         },
-        // removeFromCart: (state,action) => {
-        //     state
-        // }
+        removeFromCart: (state,action) => {
+            state.splice(state.findIndex((item) => item.id === action.payload.id),1);
+        }
     }
 });
 
 export default addToCartSlice.reducer
-export const { addToCart } = addToCartSlice.actions 
+export const { addToCart, removeFromCart } = addToCartSlice.actions

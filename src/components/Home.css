@@ -1,3 +1,8 @@
 .home_container {
     display: flex;
 }
+
+.no-product-message {
+    font-size: 30px;
+    font-weight: bold;
+}

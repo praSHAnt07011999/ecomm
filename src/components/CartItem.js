@@ -1,13 +1,16 @@
 import './CartItem.css'
 import bicycle from '../resources/images/bicycle.jpg';
 import { useDispatch } from 'react-redux';
+import { removeFromCart } from '../redux/reducers/addToCartSlice';
+import { subtractFromTotal } from '../redux/reducers/cartTotalSlice';
 
 const CartItem = (props) => {
 
     const dispatch = useDispatch();
 
     const RemoveFromCart = (item) => {
-        dispatch();
+        dispatch(removeFromCart(item));
+        dispatch(subtractFromTotal(item));
     }
 
     return (

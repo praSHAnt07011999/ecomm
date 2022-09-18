@@ -1,0 +1,51 @@
+.form-container {
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+.form-heading {
+    font-size: 30px;
+}
+
+.add-product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-label {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.description-label {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.price-label {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.rating-label {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.submit-button {
+    width: 70px;
+    margin-top: 10px;
+    font-weight: bold;
+}

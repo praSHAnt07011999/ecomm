@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 import './Cart.css';
 import CartItem from './CartItem';
 
 const Cart = () => {
 
-const cartItems = useSelector( state => state.addToCart)
+    const cartItems = useSelector( state => state.addToCart);
+    const total = useSelector( state => state.cartTotal);
 
     return(
         <div className='cart_container'>
@@ -15,6 +17,7 @@ const cartItems = useSelector( state => state.addToCart)
                         <CartItem key={item.id} id={item.id} title={item.title} description={item.description} price={item.price} rating={item.rating}/>
                     ))
                 }
+                <div className='total-amount'>Total amount: {JSON.stringify(total)}</div>
             </div>
         </div>
     )

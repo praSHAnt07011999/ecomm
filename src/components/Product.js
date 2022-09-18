@@ -2,6 +2,7 @@ import bicycle from '../resources/images/bicycle.jpg';
 import "./Product.css";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/reducers/addToCartSlice';
+import { addToTotal } from '../redux/reducers/cartTotalSlice';
 
 const Product = (props) => {
 
@@ -9,6 +10,7 @@ const Product = (props) => {
 
     const handleAddToCart = (item) => {
         dispatch(addToCart(item));
+        dispatch(addToTotal(item));
     }
 
     return (
@@ -20,7 +22,7 @@ const Product = (props) => {
             <p className='description'>{props.description}</p>
             <span className='price'>Rs. {props.price}</span><br/>
             <span className='rating'>{props.rating} ⭐️</span>
-            <button onClick={()=>handleAddToCart(props)} className='cart_button'>AddToCart</button>
+            <button onClick={()=>handleAddToCart(props)} className='cart_button'>Add To Cart</button>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import { addProduct } from "../redux/reducers/addProductSlice";
 import { useDispatch  } from "react-redux";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import './addProduct.css';
 
 const AddProduct = () => {
 
@@ -37,9 +38,9 @@ const AddProduct = () => {
 
     return (
         <div className="form-container">
-            <h3>Product Details</h3>
-            <form onSubmit={handleSubmit}>
-            <label>Title:
+            <h3 className="form-heading">Product Details</h3>
+            <form onSubmit={handleSubmit} className="add-product-form">
+            <label className="title-label">Title:
                 <input
                 type="text"
                 name="title"
@@ -47,7 +48,7 @@ const AddProduct = () => {
                 onChange={(event) => setTitle(event.target.value)}
             />
             </label>
-            <label>Description:
+            <label className="description-label">Description:
                 <input
                 type="text"
                 name="description"
@@ -55,7 +56,7 @@ const AddProduct = () => {
                 onChange={(event) => setDescription(event.target.value)}
             />
             </label>
-            <label>Price:
+            <label className="price-label">Price:
                 <input
                 type="number"
                 name="price"
@@ -63,7 +64,7 @@ const AddProduct = () => {
                 onChange={(event) => setPrice(event.target.value)}
             />
             </label>
-            <label>Rating:
+            <label className="rating-label">Rating:
                 <input
                 type="number"
                 name="rating"
@@ -71,7 +72,7 @@ const AddProduct = () => {
                 onChange={(event) => setRating(event.target.value)}
             />
             </label>
-                <input type="submit" />
+                <input type="submit" className="submit-button" />
             </form>
         </div>
     )
