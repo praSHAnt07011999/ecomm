@@ -6,3 +6,29 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+.seller-login {
+    border: 1px solid black;
+    font-size: 25px;
+    width:200px;
+    margin:20px;
+}
+
+.seller-login-heading {
+    margin-left:25px;
+}
+
+.seller-login-button {
+    margin: auto;
+}
+
+.buyer-login {
+    border: 1px solid black;
+    font-size: 25px;
+    width:200px;
+    margin:20px;
+}
+
+.buyer-login-heading {
+    margin-left:25px;
+}

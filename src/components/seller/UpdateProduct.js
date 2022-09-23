@@ -1,10 +1,10 @@
-import { addProduct } from "../redux/reducers/addProductSlice";
 import { useDispatch  } from "react-redux";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { addProductAction } from "../redux/actions/productsActions";
 import './addProduct.css';
 
-const AddProduct = () => {
+export const UpdateProduct = (props) => {
 
     const [ title, setTitle ] = useState('');
     const [ description, setDescription ] = useState('');
@@ -27,14 +27,14 @@ const AddProduct = () => {
                 description:description,
                 price:price,
                 rating:rating,
-                image: selectedFile,
-                addedToCart: false
+                image: selectedFile
             };
-            dispatch(addProduct(newProduct));
+            dispatch(addProductAction(newProduct));
             setTitle('');
             setDescription('');
             setPrice('');
             setRating('');
+            setSelectedFile('');
         }
     }
 
@@ -74,7 +74,7 @@ const AddProduct = () => {
                 onChange={(event) => setRating(event.target.value)}
             />
             </label>
-             <label className="image-label">Image:
+            <label className="image-label">Image:
                 <input
                 type="file"
                 name="img"
@@ -86,5 +86,3 @@ const AddProduct = () => {
         </div>
     )
 }
-
-export default AddProduct

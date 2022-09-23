@@ -1,0 +1,8 @@
+.products_container {
+    margin: 5px;
+    padding: 5px;
+    display:flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+

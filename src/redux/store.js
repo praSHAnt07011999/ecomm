@@ -1,14 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-import addProductSlice from "./reducers/addProductSlice";
-import addToCartSlice from "./reducers/addToCartSlice";
-import cartTotalSlice from "./reducers/cartTotalSlice";
+import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
+import { rootReducer } from "./reducers/combineReducer";
 
-const store = configureStore({
-    reducer: {
-        addProduct: addProductSlice,
-        addToCart: addToCartSlice,
-        cartTotal: cartTotalSlice
-    }
-});
-
-export default store;
+export const store = createStore(
+    rootReducer,
+    applyMiddleware(logger)
+);

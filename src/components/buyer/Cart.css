@@ -1,5 +1,7 @@
 .cart_container{
     border: 1px solid black;
+    margin: 5px;
+    width: 700px;
 }
 
 .heading {

@@ -1,15 +1,16 @@
-import "./Product.css";
+import "./availableProduct.css";
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/reducers/addToCartSlice';
-import { addToTotal } from '../redux/reducers/cartTotalSlice';
+import { addToCart } from '../../redux/actions/cartActions'
+import { addToTotalAction } from '../../redux/actions/cartTotalActions';
 
-const Product = (props) => {
+
+export const AvailableProduct = (props) => {
 
     const dispatch = useDispatch();
 
     const handleAddToCart = (item) => {
         dispatch(addToCart(item));
-        dispatch(addToTotal(item));
+        dispatch(addToTotalAction(item.price));
     }
 
     return (
@@ -25,5 +26,3 @@ const Product = (props) => {
         </div>
     )
 }
-
-export default Product

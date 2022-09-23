@@ -1,0 +1,53 @@
+.header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky;
+}
+
+.header_logo{
+    display: flex;
+    align-items: center;
+    color: #ff9f00;
+    margin: 0 25px;
+}
+
+.header_logoImage{
+    margin-right: 10px;
+}
+
+.header_logoTitle {
+    margin-left: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    border: 0;
+    color: white;
+}
+
+.seller-products {
+    display: flex;
+    color: white;
+}
+
+.products_title{
+    margin-left: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    border: 0;
+    color: white;
+}
+
+.add_to_product {
+    display: flex;
+    color: white;
+    margin-left: 20px;
+}
+
+.orders_received {
+    display: flex;
+    color: white;
+    margin-left: 20px;
+}

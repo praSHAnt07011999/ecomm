@@ -1,15 +1,15 @@
 import './CartItem.css'
 import { useDispatch } from 'react-redux';
-import { removeFromCart } from '../redux/reducers/addToCartSlice';
-import { subtractFromTotal } from '../redux/reducers/cartTotalSlice';
+import { removeFromCart } from '../../redux/actions/cartActions'
+import { subtractFromTotalAction } from '../../redux/actions/cartTotalActions';
 
-const CartItem = (props) => {
+export const CartItem = (props) => {
 
     const dispatch = useDispatch();
 
-    const RemoveFromCart = (item) => {
-        dispatch(removeFromCart(item));
-        dispatch(subtractFromTotal(item));
+    const handleRemoveFromCart = (item) => {
+        dispatch(removeFromCart(item.id));
+        dispatch(subtractFromTotalAction(item.price));
     }
 
     return (
@@ -22,10 +22,8 @@ const CartItem = (props) => {
                 <p className='item-description'>{props.description}</p>
                 <span className='item-price'>Rs. {props.price}</span>
                 <span className='item-rating'>{props.rating} ⭐️</span>
-                <button className='remove-from-cart-button' onClick={() => RemoveFromCart(props)}>Remove From Cart</button>
+                <button className='remove-from-cart-button' onClick={() => handleRemoveFromCart(props)}>Remove From Cart</button>
             </div>
         </div>
     )
 }
-
-export default CartItem

@@ -1,14 +1,25 @@
-import { useSelector } from "react-redux";
-import Products from "./Products";
+
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
-    const products = useSelector(state=>state.addProduct);
     return (
         <div className="home_container">
-        {
-            Object.keys(products).length===0 ? <p className="no-product-message">No product added! You can add products from Add Product section.</p> : <Products />
-        }
+
+            <div className="seller-login">
+                <h3 className="seller-login-heading">For Sellers</h3>
+                <Link to='/sellerHome' style={ { textDecoration: "none" }}>
+                    <button className="seller-login-button">Login</button>
+                </Link>
+            </div>
+
+            <div className="buyer-login">
+                <h3 className="buyer-login-heading">For Buyers</h3>
+                <Link  to='/buyerHome' style={ { textDecoration: "none" }}>
+                    <button className="buyer-login-button">Login</button>
+                </Link>
+            </div>
+
         </div>
     )
 }
