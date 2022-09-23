@@ -2,7 +2,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
+export const Header = () => {
     return (
         <div className="header">
             <Link to="/" style={ { textDecoration: "none" } }>
@@ -14,5 +14,3 @@ const Header = () => {
         </div>
     )
 }
-
-export default Header

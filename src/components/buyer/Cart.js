@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import './Cart.css';
 import { CartItem } from './CartItem';
-import { CheckoutButton } from './CheckoutButton';
+import { Link } from 'react-router-dom';
 
 export const Cart = () => {
 
@@ -18,7 +18,11 @@ export const Cart = () => {
                     ))
                 }
                 {
-                    total===0?<p>No item in cart.</p>:<CheckoutButton/>
+                    total===0?<p>No item in cart.</p>:
+                    <div>
+                        <p className='total_amount'>Total Amount: {total}</p> 
+                        <Link to='/checkout' style={ { textDecoration: "none" } }><button className='checkout_button'>Checkout</button></Link>
+                    </div>
                 }
             </div>
         </div>

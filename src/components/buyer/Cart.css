@@ -13,7 +13,17 @@
     display: block;
 }
 
-.total-amount{
+.total-amount {
     font-size: 30px;
     font-weight: bold;
+}
+
+.total_amount {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.checkout_button {
+    margin-left: 5px;
 }

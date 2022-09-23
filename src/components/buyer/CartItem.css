@@ -4,6 +4,7 @@
     max-height: 150px;
     display: flex;
     margin-bottom: 5px;
+    margin: 5px;
 }
 
 .product-image {
