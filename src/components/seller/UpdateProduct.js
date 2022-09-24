@@ -1,16 +1,19 @@
 import { useDispatch  } from "react-redux";
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
-import { addProductAction } from "../redux/actions/productsActions";
-import './addProduct.css';
+import { updateProduct } from "../../redux/actions/productsActions";
+import { useLocation } from "react-router-dom";
+import './UpdateProduct.css';
 
-export const UpdateProduct = (props) => {
+export const UpdateProduct = () => {
 
-    const [ title, setTitle ] = useState('');
-    const [ description, setDescription ] = useState('');
-    const [ price, setPrice ] = useState('');
-    const [ rating, setRating ] = useState('');
-    const [ selectedFile, setSelectedFile ] = useState('');
+    const location = useLocation();
+    const { item } = location.state;
+
+    const [ title, setTitle ] = useState(item.title);
+    const [ description, setDescription ] = useState(item.description);
+    const [ price, setPrice ] = useState(item.price);
+    const [ rating, setRating ] = useState(item.rating);
+    const [ selectedFile, setSelectedFile ] = useState(item.selectedFile);
 
     const dispatch = useDispatch();
 
@@ -20,16 +23,15 @@ export const UpdateProduct = (props) => {
         }
         else {
             event.preventDefault();
-            const productId = uuidv4();
-            const newProduct = {
-                id:productId,
+            const updatedProduct = {
+                id: item.id,
                 title:title,
                 description:description,
                 price:price,
                 rating:rating,
                 image: selectedFile
             };
-            dispatch(addProductAction(newProduct));
+            dispatch(updateProduct(updatedProduct));
             setTitle('');
             setDescription('');
             setPrice('');

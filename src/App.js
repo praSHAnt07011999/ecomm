@@ -11,6 +11,7 @@ import { BuyerHeader } from './components/buyer/BuyerHeader';
 import { AvailableProducts } from './components/buyer/availableProducts';
 import { BuyerOrders } from './components/buyer/BuyerOrders';
 import { Checkout } from './components/buyer/Checkout';
+import { UpdateProduct } from './components/seller/UpdateProduct';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/buyerHome" element={<><BuyerHeader/> <BuyerHome/></>}/>
           <Route exact path="/buyerOrders" element={<><BuyerHeader/> <BuyerOrders/></>}/>
           <Route exact path="/checkout" element={<><BuyerHeader/> <Checkout/></>}/>
+          <Route exact path="/updateProduct" element={<><SellerHeader/> <UpdateProduct/></>}/>
           <Route exact path="/" element={<>  <Header/> <Home /> </>} />
         </Routes>
       </Router>

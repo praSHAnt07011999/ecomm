@@ -1,0 +1,12 @@
+.seller_orders_container {
+    display: flex;
+}
+
+.seller_orders_heading{
+    display: block
+}
+
+.no_order_message {
+    font-size: 30px;
+    font-weight: bold;
+}

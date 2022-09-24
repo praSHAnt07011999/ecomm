@@ -1,15 +1,12 @@
 import "./Product.css";
 import { useDispatch } from 'react-redux';
 import { removeProductAction } from '../../redux/actions/productsActions';
-
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
 
     const dispatch = useDispatch();
 
-    // const handleUpdate = (item) => {
-        
-    // }
 
     const handleRemove = (productId) => {
         dispatch(removeProductAction(productId))
@@ -24,7 +21,10 @@ const Product = (props) => {
             <p className='description'>{props.description}</p>
             <span className='price'>Rs. {props.price}</span><br/>
             <span className='rating'>{props.rating} ⭐️</span>
-            {/* <button onClick={()=>handleUpdate(props)} className='update_button'>Update</button> */}
+            <Link to='/updateProduct' state={{ item: props }}>
+                <button className='update_button'>Update</button>
+            </Link>
+            
             <button onClick={()=>handleRemove(props.id)} className='remove_button'>Remove</button>
         </div>
     )
