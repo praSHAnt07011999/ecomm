@@ -1,11 +1,12 @@
 import { useDispatch  } from "react-redux";
 import { useState } from "react";
 import { updateProduct } from "../../redux/actions/productsActions";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import './UpdateProduct.css';
 
 export const UpdateProduct = () => {
 
+    const navigate = useNavigate();
     const location = useLocation();
     const { item } = location.state;
 
@@ -13,7 +14,7 @@ export const UpdateProduct = () => {
     const [ description, setDescription ] = useState(item.description);
     const [ price, setPrice ] = useState(item.price);
     const [ rating, setRating ] = useState(item.rating);
-    const [ selectedFile, setSelectedFile ] = useState(item.selectedFile);
+    const [ selectedFile, setSelectedFile ] = useState(item.image);
 
     const dispatch = useDispatch();
 
@@ -37,12 +38,13 @@ export const UpdateProduct = () => {
             setPrice('');
             setRating('');
             setSelectedFile('');
+            navigate('/sellerHome');
         }
     }
 
     return (
         <div className="form-container">
-            <h3 className="form-heading">Product Details</h3>
+            <h3 className="form-heading">Update Details</h3>
             <form onSubmit={handleSubmit} className="add-product-form">
             <label className="title-label">Title:
                 <input

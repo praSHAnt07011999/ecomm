@@ -26,11 +26,12 @@
 }
 
 .price{
-    margin-left: 5px;
+    margin: 5px;
 }
 
 .rating {
-    margin-left: 5px;
+    margin: 5px;
+    display: block;
 }
 
 .cart_button {
@@ -39,8 +40,15 @@
     margin-bottom: 5px;
 }
 
-.Heading{
-    border: 1px solid red;
-    width: 200px;
-    height: 20px;
+
+
+.update_button {
+    display: block;
+    margin: 5px;
+
+}
+
+.remove_button {
+    display: block;
+    margin: 5px;
 }

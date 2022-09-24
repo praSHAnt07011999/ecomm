@@ -21,7 +21,7 @@ const Product = (props) => {
             <p className='description'>{props.description}</p>
             <span className='price'>Rs. {props.price}</span><br/>
             <span className='rating'>{props.rating} ⭐️</span>
-            <Link to='/updateProduct' state={{ item: props }}>
+            <Link to='/updateProduct' state={{ item: props }} style={ { textDecoration: "none" } }>
                 <button className='update_button'>Update</button>
             </Link>
             

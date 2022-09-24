@@ -30,21 +30,7 @@
     font-weight: bold;
 }
 
-.price-label {
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.rating-label {
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.image-label {
+.phone-number-label {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;

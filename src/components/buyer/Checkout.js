@@ -5,8 +5,12 @@ import { useSelector } from "react-redux";
 import { placeOrderAction } from '../../redux/actions/orderActions';
 import { clearCart } from '../../redux/actions/cartActions'
 import { clearTotalAction } from '../../redux/actions/cartTotalActions';
+import { useNavigate } from "react-router-dom";
+import './Checkout.css';
 
 export const Checkout = () => {
+
+    const navigate = useNavigate();
 
     const [ name, setName ] = useState('');
     const [ address, setAddress ] = useState('');
@@ -37,12 +41,13 @@ export const Checkout = () => {
             setName('');
             setAddress('');
             setPhoneNumber('');
+            navigate('/buyerOrders');
         }
     }
 
     return (
         <div className="form-container">
-            <h3 className="form-heading">Product Details</h3>
+            <h3 className="form-heading">Customer Details</h3>
             <form onSubmit={handleCheckout} className="add-product-form">
             <label className="name-label">Name:
                 <input

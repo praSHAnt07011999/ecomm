@@ -10,7 +10,7 @@ export const AddProduct = () => {
     const [ description, setDescription ] = useState('');
     const [ price, setPrice ] = useState('');
     const [ rating, setRating ] = useState('');
-    const [ selectedFile, setSelectedFile ] = useState('');
+    const [ selectedFile, setSelectedFile ] = useState(null);
 
     const dispatch = useDispatch();
 
@@ -34,7 +34,7 @@ export const AddProduct = () => {
             setDescription('');
             setPrice('');
             setRating('');
-            setSelectedFile('');
+            setSelectedFile(null);
         }
     }
 
