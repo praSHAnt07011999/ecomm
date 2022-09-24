@@ -1,13 +1,18 @@
 import "./Product.css";
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { removeProductAction } from '../../redux/actions/productsActions';
 
 
 const Product = (props) => {
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    const handleUpdate = (item) => {
+    // const handleUpdate = (item) => {
         
+    // }
+
+    const handleRemove = (productId) => {
+        dispatch(removeProductAction(productId))
     }
 
     return (
@@ -19,7 +24,8 @@ const Product = (props) => {
             <p className='description'>{props.description}</p>
             <span className='price'>Rs. {props.price}</span><br/>
             <span className='rating'>{props.rating} ⭐️</span>
-            <button onClick={()=>handleUpdate(props)} className='update_button'>Update</button>
+            {/* <button onClick={()=>handleUpdate(props)} className='update_button'>Update</button> */}
+            <button onClick={()=>handleRemove(props.id)} className='remove_button'>Remove</button>
         </div>
     )
 }

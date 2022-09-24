@@ -1,0 +1,7 @@
+.buyer_orders_container {
+    display: flex;
+}
+
+.orders_heading{
+    display: block
+}

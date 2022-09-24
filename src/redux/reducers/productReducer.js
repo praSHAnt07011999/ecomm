@@ -7,7 +7,7 @@ export const productReducer = (state=initialState, action) => {
         case ADD_PRODUCT:
             return [...state, action.payload];
         case REMOVE_PRODUCT:
-            return state.filter(item => item.id !== action.payload.id);
+            return state.filter(item => item.id !== action.payload);
         default: return state;
     }
 }

@@ -1,5 +1,5 @@
 const ADD_PRODUCT = 'ADD_PRODUCT';
-const REMOVE_PRODUCT = 'ADD_PRODUCT';
+const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 
  export const addProductAction = (payload) => {
     return {

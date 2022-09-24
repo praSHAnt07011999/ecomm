@@ -1,6 +1,6 @@
 export const Orders = () => {
     return (
-        <div>
+        <div >
             Orders page
         </div>
     )
